@@ -1,0 +1,11 @@
+# Ignore log files
+*.log
+
+# Ignore temporary files
+temp/
+
+# Ignore compiled binaries
+/bin/
+
+# Ignore html reports 
+*.html 
