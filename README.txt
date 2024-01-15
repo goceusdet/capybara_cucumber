@@ -22,4 +22,4 @@
 
             Capybara.default_driver = :chrome
 
-5.
+5. Automatically creates separate reports files with each session, stored in reports folder as html files.

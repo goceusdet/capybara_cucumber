@@ -1,0 +1,3 @@
+---
+default: "--profile html_report"
+html_report: "--format html --out reports/<%= Time.now.strftime('%m-%d-%y_%I-%M-%S_%p') %>-report"
