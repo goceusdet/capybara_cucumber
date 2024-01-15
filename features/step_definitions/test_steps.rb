@@ -16,7 +16,5 @@ Then('I should see search results for {string}') do |string|
 
     puts actual_message = find("//div[@class='search-header']/h2").text
 
-    puts expected_message = "Showing results for: orthopedics"
-
-    expect(actual_message == expected_message)
+    expect(actual_message).to include(string) #--> .to include() method is like contains() method in Java
 end
