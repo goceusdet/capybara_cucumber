@@ -13,15 +13,13 @@
 
 4. To run on specified browser we need the capybara browser capabilities to be placed in the env.rb file:
     - google 'capybara [browser name] capabilities':
-        - Capybara.register_driver :chrome do |app|
-            Capybara::Selenium::Driver.new(app,
-                :browser => :chrome,
-                :desired_capabilities => Selenium::WebDriver::Remote::Capabilities.chrome(
-                'chromeOptions' => {
-                    'args' => [ "--window-size=1920,1080" ]
-                }
-                )
-            )
+        -   chrome_options = Selenium::WebDriver::Chrome::Options.new
+            chrome_options.add_argument("--window-size=1920,1080")
+
+            Capybara.register_driver :chrome do |app|
+            Capybara::Selenium::Driver.new(app, browser: :chrome, options: chrome_options)
             end
+
+            Capybara.default_driver = :chrome
 
 5.
