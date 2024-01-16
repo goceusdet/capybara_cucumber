@@ -1,7 +1,4 @@
 class SearchResultsPage
-
-    def search_result 
-        first(actual_message == expected_message)
-    end
+    include BasePage#--> including BasePage in order for Landing page to recognize capybara methods
 
 end

@@ -5,6 +5,8 @@ require 'yaml'
 require 'erb'
 require 'rspec'
 
+
+# High level instantiation
 chrome_options = Selenium::WebDriver::Chrome::Options.new
 chrome_options.add_argument("--window-size=1920,1080")
 
