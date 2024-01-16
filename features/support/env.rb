@@ -4,6 +4,7 @@ require 'pry'
 require 'yaml'
 require 'erb'
 require 'rspec'
+require_relative '../pages/base_page'
 
 
 # High level instantiation
@@ -15,5 +16,5 @@ Capybara.register_driver :chrome do |app|
 end
 
 Capybara.default_driver = :chrome
-Capybara.default_selector = :xpath #--> setting this up so that we won't have to specify everytime we locate a webelement. 
+Capybara.default_selector = :xpath #--> setting this up so that we won't have to specify locator type everytime we locate a webelement. 
 

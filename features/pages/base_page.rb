@@ -1,5 +1,5 @@
 # Stores capybara methods and include this module in page classes
-module BasePage #--> we make this a module in order to only use the methods provided 
+module BasePage 
 
     include Capybara::DSL #--> Capybara::DSL  is a module in the Capybara testing framework for Ruby that provides a set of methods to interact with web pages and perform actions like clicking buttons, filling in forms, and checking content.Methods like  visit, click_button, fill_in, find and others.
     
