@@ -2,5 +2,4 @@
 default: "--publish --tags @regression --profile html_report"
 html_report: "--format html --out reports/<%= Time.now.strftime('%m-%d-%y_%I-%M-%S_%p') %>-report.html"
 
-parallel: "--tags @regression --publish --profile html_report" 
-html_report: "--format html --out reports/<%= Time.now.strftime('%m-%d-%y_%I-%M-%S_%p') %>-report.html"
+parallel: "--tags @regression --format html --out reports/<%= ENV['TEST_ENV_NUMBER'] %>-parallel_report.html"

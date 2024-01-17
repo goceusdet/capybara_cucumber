@@ -1,5 +1,3 @@
-#  require 'rspec'
-
 class Contacts
     include BasePage # --> Include BasePage module to use Capybara methods
   
