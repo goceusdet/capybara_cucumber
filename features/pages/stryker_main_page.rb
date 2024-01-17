@@ -11,7 +11,10 @@ include BasePage #--> we include BasePage module to use capybara methods
 
             # find("//input[@id='q']").click #--> clicks on top search bar
             # find("//input[@id='q']").set(item_name).send_keys(:enter) #--> .set = sendKeys in Java && send_keys = Keys Enum in Java.
-        end
+    end
 
+    def click_on_navigation_menu(navigation_menu_name)
+        find("//a/span[.='"+navigation_menu_name.capitalize+"']").click
+    end
 
 end

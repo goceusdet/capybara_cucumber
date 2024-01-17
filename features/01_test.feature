@@ -1,3 +1,4 @@
+@regression
 Feature: Search orthopedics
 
 Scenario: As a user I should be able to search for orthopedics and get matching results

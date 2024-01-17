@@ -5,6 +5,8 @@ require 'yaml'
 require 'erb'
 require 'rspec'
 require_relative '../pages/base_page'
+require 'parallel_tests'
+require 'report_builder'
 
 
 # High level instantiation

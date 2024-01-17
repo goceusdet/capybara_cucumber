@@ -23,3 +23,15 @@
             Capybara.default_driver = :chrome
 
 5. Automatically creates separate reports files with each session, stored in reports folder as html files.
+    - run cmd: cucumber 
+
+6. To run parallel[note: it will produce separate reports per each feature file]
+    - ENABLE TO CTREATE REPORT FILE PER PARALLEL FEATURE:
+        - embed ENV Variable in 'parallel: --out' [see config.yml file]
+        - run cmd: SET TEST_ENV_NUMBER=1 to set parallel as ENV variable.
+
+    - CREATE combine_reports FILE TO STORE GENERATED HTML FILES AND COMBINE THEM BACK TO REPORTS FOLDER [see combine_reports.ps1 file]
+
+    - RUN COMMAND : bundle exec parallel_cucumber -n (number of processes to run) "&" combine_reports.ps1
+
+    - To specify number of processes/methods to run parallel assign number after '-n'.

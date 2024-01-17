@@ -1,9 +1,7 @@
 require_relative '../pages/stryker_main_page' #--> by requiring this we get to get the instances later 
 
-$stryker_page = StrykerMain.new #--> creating the instance
-
 Given('I visit {string}') do |string|
-    
+    $stryker_page = StrykerMain.new #--> creating the instance
     # need method that takes us to the url
     $stryker_page.visit_url string
     #visit string

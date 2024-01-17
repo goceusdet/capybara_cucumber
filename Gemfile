@@ -7,3 +7,5 @@ gem 'pry' #--> When the execution reaches binding.pry, the program will pause, a
 gem 'yaml'
 gem 'erb'
 gem 'rspec'
+gem 'parallel_tests'
+gem 'report_builder', '1.8'
