@@ -27,7 +27,7 @@
 
 6. To run parallel[note: it will produce separate reports per each feature file]
     - ENABLE TO CTREATE REPORT FILE PER PARALLEL FEATURE:
-        - embed ENV Variable in 'parallel: --out' [see config.yml file]
+        - embed ENV['TEST_ENV_NUMBER'] in 'parallel: --out' [see config.yml file]
         - run cmd: SET TEST_ENV_NUMBER=1 to set parallel as ENV variable.
 
     - CREATE combine_reports FILE TO STORE GENERATED HTML FILES AND COMBINE THEM BACK TO REPORTS FOLDER [see combine_reports.ps1 file]
