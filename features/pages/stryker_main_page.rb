@@ -2,7 +2,8 @@ class StrykerMain
 include BasePage #--> we include BasePage module to use capybara methods
 
     def visit_url(url)
-        visit url
+        # config file is loaded first in env.rb 
+        visit $config[url]
     end
 
     def search_item(item_name)

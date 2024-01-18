@@ -9,10 +9,10 @@ require 'parallel_tests'
 require 'report_builder'
 
 # Load configuration from config.yml
-config = YAML.load_file('config/cucumber.yml')
+$config = YAML.load_file('config/cucumber.yml')
 
 # Set the browser type from the configuration
-browser_type = config['browser'].to_sym
+browser_type = $config['browser'].to_sym
 
 Capybara.register_driver :my_driver do |app|
 
