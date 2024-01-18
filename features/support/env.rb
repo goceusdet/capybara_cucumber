@@ -8,13 +8,12 @@ require_relative '../pages/base_page'
 require 'parallel_tests'
 require 'report_builder'
 
-# Load configuration from config.yml
-$config = YAML.load_file('config/cucumber.yml')
+# Load configuration from config.yml,
+$cuckes_config = YAML.load_file('config/cucumber.yml')
+# Set the browser type from the configuration:
+browser_type = $cuckes_config['browser'].to_sym
 
-# Set the browser type from the configuration
-browser_type = $config['browser'].to_sym
-
-Capybara.register_driver :my_driver do |app|
+Capybara.register_driver :driver do |app|
 
   case browser_type
 
@@ -38,6 +37,6 @@ Capybara.register_driver :my_driver do |app|
 
 end
 
-Capybara.default_driver = :my_driver
+Capybara.default_driver = :driver
 Capybara.default_selector = :xpath #--> setting this up so that we won't have to specify locator type everytime we locate a webelement. 
 
