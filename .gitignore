@@ -9,3 +9,6 @@ temp/
 
 # Ignore html reports 
 *.html 
+
+# Ignore .idea files: when project is used by JetBrains .idea is generated
+/.idea/
