@@ -15,4 +15,5 @@ After do |scenario|
       page.save_screenshot(screenshot_path)
       puts "Screenshot saved at: #{screenshot_path}"
   end
+  Capybara.current_session.driver.quit
 end
