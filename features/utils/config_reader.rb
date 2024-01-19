@@ -4,8 +4,9 @@ class ConfigReader
 
     def self.get_property(filename, key)
     
+        # 'begin/rescue' is equivalent to try-catch in java.
         begin
-
+            # filename represents the name of the yml file.
             case filename 
                 when "qa1"
                     path = File.join(Dir.pwd, 'config', "/environments/#{filename.downcase}.yml")
