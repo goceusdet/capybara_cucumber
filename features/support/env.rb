@@ -1,42 +1,19 @@
-require 'capybara/cucumber'
-require 'selenium-webdriver'
-require 'pry'
-require 'yaml'
-require 'erb'
-require 'rspec'
-require_relative '../pages/base_page'
-require 'parallel_tests'
-require 'report_builder'
+require_relative 'driver'
 
-# Load configuration from config.yml,
-$cuckes_config = YAML.load_file('config/cucumber.yml')
-# Set the browser type from the configuration:
-browser_type = $cuckes_config['browser'].to_sym
-
-Capybara.register_driver :driver do |app|
-
-  case browser_type
-
-    when :chrome
-      chrome_options = Selenium::WebDriver::Chrome::Options.new
-      #chrome_options.add_argument("--window-size=1920,1080")
-      chrome_options.add_argument('--start-maximized')
-      Capybara::Selenium::Driver.new(app, browser: browser_type, options: chrome_options)
-    when :firefox
-      firefox_options = Selenium::WebDriver::Firefox::Options.new
-      #firefox_options.add_argument("--window-size=1920,1080")
-      firefox_options.add_argument('--start-maximized')
-      Capybara::Selenium::Driver.new(app, browser: browser_type, options: firefox_options)
-    when :edge
-      edge_options = Selenium::WebDriver::Edge::Options.new
-      edge_options.add_argument('--start-maximized')
-      Capybara::Selenium::Driver.new(app, browser: browser_type, options: edge_options)
-    else
-      raise "Unsupported browser type: #{browser_type}"
-    end
-
+# Capybara with the singleton driver instance
+Before do
+  @driver_instance = Driver.instance
+  @driver_instance.get_driver
+  @driver = @driver_instance
 end
 
-Capybara.default_driver = :driver
-Capybara.default_selector = :xpath #--> setting this up so that we won't have to specify locator type everytime we locate a webelement. 
-
+# Clean up any state or perform actions after each scenario
+After do |scenario|
+  if scenario.failed?
+    # The `screenshot` method is available if you are using the Selenium driver
+      screenshot_path = "reports/screenshots/#{scenario.name}_failed.png"
+      page.save_screenshot(screenshot_path)
+      puts "Screenshot saved at: #{screenshot_path}"
+  end
+  Capybara.current_session.driver.quit
+end
