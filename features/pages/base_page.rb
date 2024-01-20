@@ -12,4 +12,7 @@ module BasePage
         # expect(page).to have_link('link_content') -- Checks if a link with the specified text exists on the page.
         # expect(page).to have_current_path('/path', ignore_query: true/false) -- Checks if the current URL path matches the specified path.
 
+    include Roo::Excelx #--> to read from .xlsx files
+    include Roo::Excel #--> to read from .xls files
+
 end
