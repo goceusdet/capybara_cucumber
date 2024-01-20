@@ -1,5 +1,5 @@
 require_relative 'features/utils/environment'
-require_relative 'features/utils/config_reader'
+require_relative 'features/utils/excel_utils'
 
 
 class Test
@@ -12,6 +12,8 @@ class Test
     # puts ConfigReader.get_property_per_filename('cucumber', 'invalid')
     # p ConfigReader.get_property('browser')
     # puts ConfigReader.get_property('')
+     excel_utils = ExcelUtils.new('C:\Users\MTRPE\OneDrive\Desktop\Capybara_Cucumber\resources\test_data\PagesInfoRuby.xlsx')
+    puts excel_utils.get_cell_data(7, 2)
 
 
 end
