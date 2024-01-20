@@ -3,7 +3,7 @@ include BasePage #--> we include BasePage module to use capybara methods
 
     def visit_url(page)
         # laod correct yml file:
-        visit ConfigReader.get_property('qa1', page)
+        visit Environment.get_home_page
     end
 
     def search_item(item_name)
