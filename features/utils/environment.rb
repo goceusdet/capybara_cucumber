@@ -54,6 +54,9 @@ class Environment
         def get_DB_password
             ConfigReader.get_property_per_filename(@@environment, 'dbPassword')
         end
+        def get_pages_info_sheet_name
+            ConfigReader.get_property_per_filename(@@environment, 'pages_info_sheet_name')
+        end
 
     end
         
