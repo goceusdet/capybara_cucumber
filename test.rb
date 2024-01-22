@@ -13,7 +13,12 @@ class Test
     # p ConfigReader.get_property('browser')
     # puts ConfigReader.get_property('')
      excel_utils = ExcelUtils.new('C:\Users\MTRPE\OneDrive\Desktop\Capybara_Cucumber\resources\test_data\PagesInfoRuby.xlsx')
-    puts excel_utils.get_cell_data(7, 2)
-
+    # puts excel_utils.get_cell_data(7, 2)
+    # p excel_utils.get_data_array
+    # p excel_utils.get_data_array_without_first_row
+    # puts excel_utils.get_data_list
+    # puts excel_utils.get_data_list[5]
+    # puts excel_utils.get_columns_names
+    p excel_utils.set_cell_data('TestTestTest', 14, 1)
 
 end
