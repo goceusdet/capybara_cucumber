@@ -6,4 +6,3 @@ parallel: "--tags @regression --format html --out reports/<%= ENV['TEST_ENV_NUMB
 
 browser: "chrome"
 environment: "qa1"
-# home_page: "https://www.stryker.com/us/en/index.html"
