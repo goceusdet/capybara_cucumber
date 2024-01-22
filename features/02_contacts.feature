@@ -1,4 +1,4 @@
-@regression
+@regression @ui
 Feature: Contacts
     As a user, I want to go to contact page so that I can easily contact stryker representative.
 
