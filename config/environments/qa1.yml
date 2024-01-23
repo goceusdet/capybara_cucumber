@@ -3,7 +3,7 @@ contact_page_title: "Contact | Stryker"
 pages_info_sheet_name: 'PagesInfo'
 
 # --API--
-API.base.URI: "https://b563ddf1-22dd-42ae-bed5-c83ee565a17d.mock.pstmn.io"
+API.base.URI: "https://api.predic8.de/shop/v2"
 #each user type
 #userName= info
 #password=info

@@ -1,8 +1,11 @@
 ---
-default: "--publish --profile html_report"
+default: "--publish --tags @regression --profile html_report"
+ui: "--tags @ui --profile html_report"
+api: "--tags @api --profile html_report"
+ui_and_api: "--publish --tags @ui_and_api --profile html_report"
 html_report: "--format html --out reports/<%= Time.now.strftime('%m-%d-%y_%I-%M-%S_%p') %>-report.html"
 
-parallel: "--format html --out reports/<%= ENV['TEST_ENV_NUMBER'] %>-parallel_report.html"
+parallel: "--publish --tags @regression --format html --out reports/<%= ENV['TEST_ENV_NUMBER'] %>-parallel_report.html"
 
 browser: "chrome"
 environment: "qa1"
