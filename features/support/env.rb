@@ -1,5 +1,6 @@
 require_relative 'driver'
 
+# UI hooks:
 # Capybara with the singleton driver instance
 Before do |scenario|
   scenario.source_tag_names << '@ui and @env'
@@ -7,7 +8,6 @@ Before do |scenario|
   @driver_instance.get_driver
   @driver = @driver_instance
 end
-
 # Clean up any state or perform actions after each scenario
 After do |scenario|
   scenario.source_tag_names << '@ui and @env'
@@ -18,4 +18,11 @@ After do |scenario|
       puts "Screenshot saved at: #{screenshot_path}"
   end
   Capybara.current_session.driver.quit
+end
+
+
+#API hooks:
+Before do |scenario|
+  scenario.source_tag_names << '@env and @api'
+  #base_uri = Environment.get_api_base_uri
 end
